@@ -1,9 +1,9 @@
-# Práctica 11. Gráficos, Objetos y Eventos en TypeScript. Movimiento y control de un Objeto Gráfico.
-
-### Factor de ponderación: 9
+# Práctica 12. Modelo Vista Controlador. Programación gráfica, orientada a objetos y dirigida por eventos en TypeScript. Bouncing Ball.
+### Factor de ponderación: 10
 
 ### Objetivos
 Los objetivos de esta tarea son poner en práctica:
+* La arquitectura Modelo Vista Controlador
 * Conceptos de Programación orientada a eventos en TypeScript.
 * Conceptos de Programación Gráfica en TypeScript usando la API Canvas.
 * Metodologías y conceptos de Programación Orientada a Objetos en TypeScript.
@@ -73,33 +73,60 @@ o simplemente papel y bolígrafo.
 Realice, como siempre, un diseño incremental del programa comprobando cada una de las funcionalidades que añade, siguiendo un
 desarrollo TDD.
 
-### Movimiento y control de un objeto gráfico
+### El patrón Modelo Vista Controlador
 
-Desarrolle un programa `objeto_grafico.ts` que muestre en pantalla una ventana
-rectangular con fondo de color azul sobre la que se verá un círculo centrado en la ventana
-y un panel con cuatro botones que permiten mover el círculo hacia arriba, abajo, izquierda
-y derecha.
+El 
+[modelo-vista-controlador](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
+(MVC) es un patrón de diseño arquitectónico habitualmente utilizado para el desarrollo de interfaces de usuario 
+que divide la lógica de la aplicación en tres elementos relacionados. 
+Esta división se realiza para separar la representación interna de la información (modelo) 
+de las formas en que se presenta (vista) y se acepta la información del usuario (contolador).
+Este patrón se ha utilizado tradicionalmente para interfaces gráficas de usuario (GUIs) de escritorio, 
+y se ha popularizado asimismo para el diseño de aplicaciones web.
 
-[![App
-GUI](https://raw.githubusercontent.com/ULL-ESIT-PAI-2022-2023/2022-2023_P11_Events-GraphicObject/main/img/bola.png)
+Es fácil encontrar en la web información sobre el patrón MVC, así como ejemplos de implementación del
+mismo en diferentes lenguajes.
+Los siguientes son elementos que puede utilizar para iniciarse en el estudio del patrón MVC:
+* [Estas transparencias](https://campusingenieriaytecnologia2122.ull.es/pluginfile.php/26693/mod_resource/content/2/FAlmeida-Transparencias-MVC2020.pdf)
+del profesor F. Almeida pueden ser un buen punto de toma de contacto con MVC.
+* En [esta otra página](https://www.roseindia.net/tutorial/java/jdbc/javamvcdesignpattern.html)
+puede hallar otra explicación detallada del modelo con una imagen que muestra el papel y las relaciones entre
+los componentes del mismo.
+* El directorio `MVC-ejemplo-java` de este proyecto contiene una aplicación java para un conversor de monedas
+que sigue el patrón MVC.
+* Por último, en el artículo
+[Build a Simple MVC App From Scratch in JavaScript](https://www.taniarascia.com/javascript-mvc-todo-app/)
+se explica con detalle la implementación de una aplicación (lista de tareas) siguiendo el patrón MVC.
+El código de la aplicación utilizando clases ES6 de JS está disponible a través de los enlaces del artículo.
 
-La imagen anterior muestra el posible aspecto (básico) de la interfaz del programa a realizar.
+### Bouncing Ball 
 
-Las siguientes deben tomarse como especificaciones de la aplicación a desarrollar:
-* La interfaz contendrá los cuatro botones: `Up`, `Down`, `Left`, `Right` que actúan 
-  sobre el movimiento de la bola en la correspondiente dirección.
-* Cuando el círculo alcanza cualquiera de los bordes del área de dibujo, se ha de impedir
-  su movimiento en la dirección del borde alcanzado (los bordes son impenetrables).
-* El número de pixeles que se desplaza el círculo en el área de dibujo con cada pulsación de un botón
-  será un parámetro del programa.
-* Trate de realizar un diseño orientado a objetos lo más modular y flexible posible.
+En esta práctica se propone desarrollar una aplicación TypeScript basada en el patrón MVC.
+La aplicación permitirá la visualización una bola de color que se mueva según un movimiento rectilíneo uniforme y rebote en los
+bordes del contenedor gráfico en el que se realiza la simulación.
+
+[Esta imagen](https://raw.githubusercontent.com/fsande/PAI-Labs-Public-Data/master/img/p13_BouncingBall/BouncingBall.png) 
+estática puede servir de referencia para la simulación que se propone realizar.
+
+Diseñe su aplicación web como una SPA
+([Single-page application](https://en.wikipedia.org/wiki/Single-page_application))
+de modo que toda la simulación se muestre en el viewport del navegador sin necesidad de usar las barras de scroll.
+
+La posición inicial de la bola en el contenedor gráfico así como el color de la misma se determinará aleatoriamente.
+
+Los rebotes de la bola con las paredes del contenedor han de simular en la medida de lo posible el
+comportamiento de una bola física rebotando en las paredes de un recinto.
+
+No añada inicialmente a la interfaz gráfica de su programa otros elementos adicionales.
+El el esquema de su página HTML reserve espacio en la parte inferior del Viewport del navegador para alojar
+elementos adicionales de interfaz gráfica de usuario.
 
 ### Interfaz gráfica del programa
 
 La visualización de la ejecución del programa se realizará a través de una página web alojada
 en la máquina IaaS-ULL de la asignatura y cuya URL tendrá la forma:
 
-[1] `http://10.6.129.123:8080/einstein-albert-graphic-object.html`
+[1] `http://10.6.129.123:8080/einstein-albert-bouncing-ball.html`
 
 en la que se incluirá un elemento HTML canvas para el área de dibujo.
 Sustituya *Albert Einstein* por su nombre y apellido en la URL de su página
@@ -126,6 +153,7 @@ Utilice lo que haya aprendido de CSS para dotar de estilo propio a las páginas 
 desarrolle.
 
 ## Referencias
+* [Modelo-vista-controlador](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
 * [PAI Code Examples](https://github.com/ULL-ESIT-PAI-2022-2023/PAI-class-code-examples)
 * [The Modern Javascript Tutorial](https://javascript.info)
 * [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html)
