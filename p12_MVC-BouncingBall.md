@@ -87,7 +87,7 @@ y se ha popularizado asimismo para el diseño de aplicaciones web.
 Es fácil encontrar en la web información sobre el patrón MVC, así como ejemplos de implementación del
 mismo en diferentes lenguajes.
 Los siguientes son elementos que puede utilizar para iniciarse en el estudio del patrón MVC:
-* [Estas transparencias](https://campusingenieriaytecnologia2122.ull.es/pluginfile.php/26693/mod_resource/content/2/FAlmeida-Transparencias-MVC2020.pdf)
+* [Estas transparencias](https://campusingenieriaytecnologia2223.ull.es/pluginfile.php/4388/mod_resource/content/2/FAlmeida-Transparencias-MVC2020.pdf)
 del profesor F. Almeida pueden ser un buen punto de toma de contacto con MVC.
 * En [esta otra página](https://www.roseindia.net/tutorial/java/jdbc/javamvcdesignpattern.html)
 puede hallar otra explicación detallada del modelo con una imagen que muestra el papel y las relaciones entre
